@@ -50,6 +50,14 @@
             font-size: 150%;
             font-style: oblique;
         }
+        #copyBtn {
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            padding: 0 10px 0 10px;
+            font-size: 200%;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -65,10 +73,18 @@
             <p id="how">How to use :</p>
             <p id="add">Just add the folowing code after ending the body tag -</p>
             <br>
-            <p id="code">&#60;script src='arnavgumber.github.io/loadingez/LoadingEZ.js'&#62;&#60;/script&#62</p>
+            <input id="code" value="&#60;script src='arnavgumber.github.io/loadingez/LoadingEZ.js'&#62;&#60;/script&#62">
+            <button id="copyBtn" onclick="copylink()">Copy</button>
             <br>
             <p id="done">And you are done</p>
         </div>
 </body>
-
+<script>
+    function copylink() {
+        let code = document.getElementById("code");
+        code.select();
+        document.execCommand("copy");
+        document.getElementById("copyBtn").innerHTML = "Copied";
+        }
+</script>
 </html>
