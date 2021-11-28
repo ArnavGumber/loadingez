@@ -20,6 +20,10 @@
         #titlejs {
             color: red;
         }
+        #version {
+            color: lime;
+            text-decoration: underline;
+        }
         #description {
             font-size: 150%;
         }
@@ -33,7 +37,7 @@
             margin-left: 10%;
             max-width: 50%;
         }
-        #how {
+        #how, #darkTitle {
             font-size: 250%;
             font-style: italic;
         }
@@ -41,7 +45,7 @@
             font-size: 150%;
             font-variant: small-caps;
         }
-        #code {
+        #code, #attr {
             font-size: 150%;
             font-stretch: extra-expanded;
             margin-left: 10%;
@@ -50,7 +54,7 @@
             font-size: 150%;
             font-style: oblique;
         }
-        #copyBtn {
+        #copyBtn, #copyBtn2 {
             background-color: blue;
             color: white;
             border-radius: 10px;
@@ -63,7 +67,7 @@
 
 <body>
     <center>
-        <p id="title">LoadingEZ<i id="titlejs">.js</i></p>
+        <p id="title">LoadingEZ<i id="titlejs">.js</i> <i id="version">V- 1.1.0</i></p>
         <p id="description">The easiest JavaScript loading library ever</p>
         <hr style="background: gray;width: 75%;">
         <br>
@@ -77,6 +81,12 @@
             <button id="copyBtn" onclick="copylink()">Copy</button>
             <br>
             <p id="done">And you are done</p>
+            <br>
+            <p id="darkTitle">What if I need dark mode :</p>
+            <p id="add">Just add the folowing attribute in the body tag -</p>
+            <br>
+            <input id="attr" value="dark='true'">
+            <button id="copyBtn2" onclick="copyattr()">Copy</button>
         </div>
 </body>
 <script>
@@ -85,6 +95,12 @@
         code.select();
         document.execCommand("copy");
         document.getElementById("copyBtn").innerHTML = "Copied";
+        }
+        function copyattr() {
+        let attr = document.getElementById("attr");
+        attr.select();
+        document.execCommand("copy");
+        document.getElementById("copyBtn2").innerHTML = "Copied";
         }
 </script>
 </html>
